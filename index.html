@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Valentines</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      font-family: 'Quicksand', sans-serif;
+      overflow-x: hidden;
+      overflow-y: scroll; /* Make the page scrollable */
+    }
+
+    .message {
+      margin-top: 20px;
+      text-align: center;
+      color: #333;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    .message h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #ff69b4;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .spotify-wrapper {
+      background-color: #add8e6; /* Light blue color */
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 20px 0;
+      width: 600px;
+      display: flex;
+      justify-content: center; /* Centers the iframe horizontally */
+      align-items: center; /* Centers the iframe vertically */
+    }
+
+    iframe {
+      margin-top: 35px;
+      border-radius: 12px;
+      width: 600px;
+      height: 200px;
+    }
+
+    .polaroid {
+      position: relative;
+      margin-top: 20px;
+      width: 300px;
+      background-color: #f8f8f8;
+      border-radius: 10px;
+      text-align: center;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .polaroid .camera {
+      width: 100%;
+      height: auto;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .photo-container {
+      width: 300px;
+      height: auto; /* Adjust height to fit content */
+      background: #f8f8f8;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+    }
+
+    .photo {
+      width: 90%;
+      margin: 20px auto; /* Added margin for spacing */
+      background: #e0e0e0;
+      aspect-ratio: 3 / 4;
+      border-radius: 5px;
+      perspective: 1000px;
+      cursor: pointer;
+      animation: bounceIn 0.8s ease-out;
+    }
+
+    .photo-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .photo:hover .photo-inner {
+      transform: rotateY(180deg);
+    }
+
+    .photo .front, .photo .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 5px;
+      border: 5px solid #000000; /* Add border color and thickness */
+    }
+
+    .photo .front {
+      background: #e0e0e0;
+    }
+
+    .photo .back {
+      transform: rotateY(180deg);
+      background: #add8e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+      font-size: 1rem;
+      padding: 10px;
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .scroll-indicator {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #999;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+        /* Floating Hearts */
+        .heart {
+    position: absolute;
+    color: #ff4d94;
+    font-size: 20px;
+    opacity: 0.8;
+    animation: float 4s linear infinite;
+}
+
+
+    
+   
+  </style>
+</head>
+<body>
+  <div class="message">
+    <h1>Happy Valentines, Baby! 💖</h1>
+    <p>My heart is yours, now and for all eternity</p>
+  </div>
+
+  <div class="spotify-wrapper">
+    <iframe src="https://open.spotify.com/embed/track/3sW3oSbzsfecv9XoUdGs7h?utm_source=generator" 
+            frameborder="0" allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+<!-- Floating Hearts Container -->
+<div id="heartContainer"></div>
+  <div class="polaroid">
+    <img src="polaroid-camera.png" alt="Polaroid Camera" class="camera">
+    <div class="photo-container">
+        <div class="photo">
+            <div class="photo-inner">
+              <div class="front" style="background: url('photo1.jpg') center/cover; border: 5px solid #000000;"></div>
+              <div class="back" style="border: 5px solid #000000;">"The moment I saw you, it was as if the universe whispered, 'This one’s your forever."</div>
+            </div>
+          </div>
+          <div class="photo">
+            <div class="photo-inner">
+              <div class="front" style="background: url('photo2.jpg') center/cover; border: 5px solid #000000;"></div>
+              <div class="back" style="border: 5px solid #000000;">"I was enchanted to meet you, and even more enchanted to love you every single day."</div>
+            </div>
+          </div>
+          <div class="photo">
+            <div class="photo-inner">
+              <div class="front" style="background: url('photo3.jpg') center/cover; border: 5px solid #080808;"></div>
+              <div class="back" style="border: 5px solid #000000;">"This love story feels like a secret whispered by the stars, and I never want the magic to fade."</div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator"><h3>I Love You 💖</h3></div>
+  <script>
+ 
+        function createHeart() {
+    let heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.className = "heart";
+    document.body.appendChild(heart);
+
+    let randomSize = Math.random() * 20 + 10; // Random size between 10px-30px
+    heart.style.fontSize = randomSize + "px";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.bottom = "100px"; // Start from bottom
+    heart.style.position = "fixed"; // Ensures it stays relative to the screen
+    heart.style.opacity = Math.random() * 0.5 + 0.5; // Random opacity between 0.5 and 1
+
+    let duration = Math.random() * 3 + 3; // 3s to 6s
+    heart.style.animation = `float ${duration}s linear`;
+
+    setTimeout(() => {
+        heart.remove();
+    }, duration * 1000);
+}
+
+// Create hearts every 500ms
+setInterval(createHeart, 500);
+
+    
+    </script>
+</body>
+</html>
